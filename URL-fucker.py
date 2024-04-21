@@ -75,6 +75,6 @@ def main(path):
                 else:
                     print('|--',TOyellow(now())+url,TOyellow(str(statuse_code)),tittle)
             except:
-                print('|--',TOred(now()+'An error occurred while parsing the URL: ')+url,TOred(str(statuse_code)),tittle)
+                print('|--',TOred(now()+'An error occurred while parsing the URL: ')+url,TOred(str('5xx')),tittle)
 
 main(path)
