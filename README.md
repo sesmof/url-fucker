@@ -7,7 +7,6 @@
 使用方法:
 
 pip install requests
-
 pip install beautifulsoup4
 
 
