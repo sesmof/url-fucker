@@ -18,10 +18,11 @@ logo=TOmiku(r'''
 | | |||  \/|| |   _____ |  __\| | |||  /  |   / |  \  |  \/|
 | \_/||    /| |_/\\____\| |   | \_/||  \_ |   \ |  /_ |    /
 \____/\_/\_\\____/      \_/   \____/\____/\_|\_\\____\\_/\_\
-''')+TOgreen('*** v0.1 *********************************')+TObulue('''*** ---by sesmof ***''')
+''')+TOgreen('*** v1.0 *********************************')+TObulue('''*** ---by sesmof ***''')
 #Command line parsing解析命令行 
 parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v0.1'))
 parser.add_argument('-u', type=str, default=None, help='input the url')
+parser.add_argument('-t', action='store_true', help='if you want to use multithreading')
 args=parser.parse_args()
 #---
 #加脑袋
@@ -47,20 +48,38 @@ def traverse_file(path):
 from core import findurl
 #获取网页摘要
 from core import getxxx
+import threading
+#多线程函数
+def worker(file, url, lock):
+    try:
+        status_code, title = getxxx.getxxx(url)
+    except:
+        status_code = 'Unknown'
+        title = 'Unknown'
+        with lock:
+            print('|--', TOred(now()+'An error occurred while parsing the URL: ')+url, TOred(status_code), title)
+    else:
+        with lock:
+            if status_code == 200:
+                print('|--', TOgreen(now())+url, TOgreen(str(status_code)), title)
+            else:
+                print('|--', TOyellow(now())+url, TOyellow(str(status_code)), title)
+#下载页面,还有一些初始化功能:
+def downpage():
+    if args.u==None:
+        print(logo)
+        print('\n'+TOmiku('[*]')+'-h for help\n'+TOmiku('[*]')+'-u input url\n'+TOmiku('[*]')+'-t use multithreading\n')
+        exit()
+    else:
+        print(logo)
+        url=add_http_header(str(args.u))
 
-if args.u==None:
-    print(logo)
-    print('\n'+TOmiku('[*]')+'-h for help\n'+TOmiku('[*]')+'-u input url\n')
-    exit()
-else:
-    print(logo)
-    url=add_http_header(str(args.u))
+        downurl.download_webpage(url,path)
+        print(TOgreen(now()+'success:')+' main-page is downloaded')
+downpage()
 
-    downurl.download_webpage(url,path)
-
-
-    print(TOgreen(now()+'success:')+' main-page is downloaded')
-def main(path):
+#普通启动
+def normal_main(path):
     for file in traverse_file(path):
         print ('\n'+TOmiku(file))
         urls_in_file, paths_in_file=findurl.find_urls_and_paths_in_file(file)
@@ -76,5 +95,20 @@ def main(path):
                     print('|--',TOyellow(now())+url,TOyellow(str(statuse_code)),tittle)
             except:
                 print('|--',TOred(now()+'An error occurred while parsing the URL: ')+url,TOred(str('5xx')),tittle)
-
-main(path)
+#多线程启动
+def thread_main(path):
+    lock = threading.Lock()
+    for file in traverse_file(path):
+        print('\n' + TOmiku(file))
+        urls_in_file, paths_in_file = findurl.find_urls_and_paths_in_file(file)
+        threads = []
+        for url in urls_in_file:
+            t = threading.Thread(target=worker, args=(file, url, lock))
+            t.start()
+            threads.append(t)
+        for t in threads:
+            t.join()
+if args.t ==False:
+    normal_main(path)
+elif args.t==True:
+    thread_main(path)
