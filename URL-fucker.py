@@ -3,6 +3,8 @@
 a inferior and terrible program for mining URLs, wrote by sesmof and a terrible AI.
 Thank you for using ;)
 '''
+import time
+time1=time.time()
 import argparse
 from core import downurl
 from core.color import *
@@ -112,3 +114,6 @@ if args.t ==False:
     normal_main(path)
 elif args.t==True:
     thread_main(path)
+whattime=time.time()-time1
+
+print('\n'+TOmiku('[*]DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s')+'\n')
