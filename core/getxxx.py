@@ -25,7 +25,9 @@ def getxxx(url):
     status_code = response.status_code
 
     # 初始化title为None
-    title = None
+    title = "No title found"
+    status_code == 'None'
+
 
     # 如果状态码为200，解析网页并获取标题
     if status_code == 200:
