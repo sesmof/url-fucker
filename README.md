@@ -16,4 +16,6 @@ pip install beautifulsoup4
 
 python3 url-fucker -u example.com  #启动
 
+python3 url-fucker -u example.com -t #以多线程模式启动#2024.4.21 添加了多线程功能
+
 作者博客园:https://www.cnblogs.com/sesmof
