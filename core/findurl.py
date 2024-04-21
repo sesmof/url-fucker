@@ -23,6 +23,8 @@ def find_urls_and_paths_in_file(file_path):
                         try:
                             result = re.search('(.*?)<|(.*?)>', url)
                             result = re.search('(.*?)>|(.*?)<', url)
+                            result = re.search('(.*?))|(.*?)(', url)
+                            result = re.search('(.*?)(|(.*?))', url)
                             result=result.group(1)
                             urls.append(result)
                         except:
