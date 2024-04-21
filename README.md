@@ -10,8 +10,8 @@ pip install requests
 
 pip install beautifulsoup4
 #安装模块
--
--
+
+
 python3 url-fucker -u example.com  #启动
 
 作者博客园:https://www.cnblogs.com/sesmof
