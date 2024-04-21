@@ -5,11 +5,11 @@
 先把url源码(包括css/js)下载下来,然后再在源码中识别出url,对识别出来的url进行访问,获得相应码与网页tittle
 
 使用方法:
-
+#安装模块
 pip install requests
 
 pip install beautifulsoup4
-#安装模块
+
 
 
 python3 url-fucker -u example.com  #启动
