@@ -23,7 +23,7 @@ logo=TOmiku(r'''
 \____/\_/\_\\____/      \_/   \____/\____/\_|\_\\____\\_/\_\
 ''')+TOgreen('*** v1.11 *********************************')+TObulue('''*** ---by sesmof ***''')
 #Command line parsing解析命令行 
-parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v0.1'))
+parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v1.11'))
 parser.add_argument('-u', type=str, default=None, help='input the url')
 parser.add_argument('-t', action='store_true', help='if you want to use multithreading')
 parser.add_argument('-s', action='store_true', help='find subdomain')
@@ -62,7 +62,7 @@ def find_subdomain2(path):
         #print(urls_in_file)
         # print('===========================')
         # print(find_subdomain(urls_in_file,args.u))
-        subdomains.append(find_subdomain(urls_in_file,args.u))
+        subdomains.append(find_subdomain(urls_in_file,add_http_header(args.u)))
     return subdomains
 #find_subdomain2(path)#test
 
@@ -133,30 +133,26 @@ if args.s ==True:
     # subdomain_worker=threading.Thread(target=find_subdomain2,args=(path,))
     # subdomain_worker.start()
     #find_subdomain2(path)
-
-    #future = ThreadPoolExecutor().submit(find_subdomain2, path)
-    #添加这行会使子域名收集操作与别的操作同时进行
+    future = ThreadPoolExecutor().submit(find_subdomain2, path)
     
 if args.t ==False:
     normal_main(path)
 elif args.t==True:
     thread_main(path)
-#收集子域名相关👇
 if ifsubdomain==1:
     whattime=time.time()-time1
     print('\n'+TOmiku('[*]urls finding is DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s'))
-    print(TOmiku('[*]')+TObling("subdomain's finding is WAITING to work out"))
-    with ThreadPoolExecutor() as mikuThreadPoolExecutor:
-        future = mikuThreadPoolExecutor.submit(find_subdomain2, path)
-        subdomains = future.result()
-        if len(subdomains)!=0:
-            print(TOmiku('subdomains:')+'\n')
-            for i in subdomains:
-                if len(i)!=0:
-                    for j in i:
-                        print(j)
-        else:
-            print(TOyellow('Sorry no subdomains found')+'\n')
+    print(TOmiku("[*]subdomain's finding is WAITING to work out"))
+
+    subdomains = future.result()
+    if len(subdomains)!=0:
+        print(TOmiku('subdomains:')+'\n')
+        for i in subdomains:
+            if len(i)!=0:
+                for j in i:
+                    print(j)
+    else:
+        print(TOyellow('Sorry no subdomains found')+'\n')
 
 
     #print(subdomains)
