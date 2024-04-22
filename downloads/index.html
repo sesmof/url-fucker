@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>sesmof - 博客园</title>
+    <link rel="canonical" href="https://www.cnblogs.com/sesmof" />
+    <link rel="shortcut icon" id="favicon" href="//assets.cnblogs.com/favicon.svg?v=2" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=22aBlxLxM3CErNzn75a0-VjXxP1bUWs59o5gqlkic6c" />
+    
+
+    
+        
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/sesmof/custom.css?v=M8To7qEiClk5j8&#x2B;gr6sf&#x2B;xNi&#x2B;ok=" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/css/mobile-common.min.css?v=F2e9dMGzAUzDRZU-W-4qVsoLMeDjGqD2cUFxFY5EcWc" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/sesmof/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/sesmof/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/sesmof/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 816118;
+        var currentBlogApp = 'sesmof';
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Custom';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        window.cb_enable_mathjax = false;
+        window.mathEngine = 1;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = false;
+        window.enableMacStyleCodeBlock = false;
+    </script>
+    <script src="https://assets.cnblogs.com/scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn-www.cnblogs.com/js/blog-common.min.js?v=7n7rsUCr8zvcJ0xW17A4i9kC8fv9mVkv6d22l34Nczw"></script>
+        <script>updateCustomBlogReferrer();</script>
+    
+</head>
+<body class="skin-custom has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile bannerbar-text-mobile formobile">
+                <a href="https://www.cnblogs.com/cmt/p/18094172" onclick="countCreativeClicks('M2-博客园-鼠标垫')" rel="nofollow">
+                    <img src="https://img2024.cnblogs.com/blog/35695/202401/35695-20240115080910898-1157541931.jpg" alt="" onload="countCreativeImpressionsOnMobile('M2-博客园-鼠标垫')" />
+                    <span id="m2_impression" style="display:none"></span>
+                </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="//assets.cnblogs.com/logo.svg" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="https://cnblogs.vip/">会员</a></li>
+                <li><a href="https://cnblogs.vip/store">周边</a></li>
+                <li>
+                    <a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a>
+                </li>
+                <li>
+                    <a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a>
+                </li>
+                <li>
+                    <a href="https://ai.hanghang.com/page/4649915" target="_blank">AI培训</a>
+                </li>
+                <li><a href="https://market.cnblogs.com" target="_blank">云市场</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search dropdown" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" autocomplete="off" />
+                        <button id="zzk_search_button" onclick="window.navbarSearchManager.triggerActiveOption()">
+                            <img id="search_icon" class="focus-hidden" src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                            <img class="hidden focus-visible" src="//assets.cnblogs.com/icons/enter.svg" alt="搜索" />
+                        </button>
+                        <ul id="navbar_search_options" class="dropdown-menu quick-search-menu">
+                            <li tabindex="0" class="active" onclick="zzkSearch(event, document.getElementById('zzk_search_input').value)">
+                                <div class="keyword-wrapper">
+                                    <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                    <div class="keyword"></div>
+                                </div>
+                                <span class="search-area">所有博客</span>
+                            </li>
+                                    <li tabindex="1" onclick="zzkBlogSearch(event, 'sesmof', document.getElementById('zzk_search_input').value)">
+                                        <div class="keyword-wrapper">
+                                            <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                            <div class="keyword"></div>
+                                        </div>
+                                        <span class="search-area">当前博客</span>
+                                    </li>
+                        </ul>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/message.svg" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="//assets.cnblogs.com/icons/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="//assets.cnblogs.com/icons/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <div id="loading"><div class="loader-inner"></div></div>
+    </div>
+
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/sesmof/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/sesmof">sesmof</a>
+</h1>
+<h2>QvQ</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/sesmof/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/sesmof">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/sesmof/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_18147268">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sesmof/p/archive/2024/04/20">2024年4月20日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/18147911">
+    <span>
+        写了个低技术力的爬虫信息收集工具
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_18147911">
+摘要：        
+原理差不多就是把网站源代码下载下来,然后再源代码里用正则识别出url,再对url进行请求,得到响应码和网页标题 使用截图: github链接: **https://github.com/sesmof/url-fucker ** 第一次写工具,多多包涵 2024.4.22 增加了多线程功能和扫子域名功    <a href="https://www.cnblogs.com/sesmof/p/18147911" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-04-20 17:20
+sesmof
+<span data-post-id="18147911" class="post-view-count">阅读(10)</span> 
+<span data-post-id="18147911" class="post-comment-count">评论(0)</span> 
+<span data-post-id="18147911" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=18147911" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/18147268">
+    <span>
+        python 在windows cmd中显示彩色的字符串(无第三方库,用ANSI转义)
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_18147268">
+摘要：        
+import os try: os.system(&#39;&#39;) # 开启windows CMD的ANSI转义序列支持 except: pass class colors(str): def TOred(st): return &#39;\033[31m&#39;+st+&#39;\033[0m&#39; def TOgreen(st):    <a href="https://www.cnblogs.com/sesmof/p/18147268" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-04-20 10:13
+sesmof
+<span data-post-id="18147268" class="post-view-count">阅读(1)</span> 
+<span data-post-id="18147268" class="post-comment-count">评论(0)</span> 
+<span data-post-id="18147268" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=18147268" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_18146869">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sesmof/p/archive/2024/04/19">2024年4月19日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/18146869">
+    <span>
+        burpsuite使用深色主题暗色主题[保姆姬教程,方便快捷]
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_18146869">
+摘要：        
+点开burpsuite后点右上角的齿轮,在弹出的新窗口的搜索框搜索&#39;theme&#39;,然后点&#39;dark&#39;. 具体如图 成了 PS:我在网上搜burp改暗色主题,全是一大堆要么一上来吹水,要么得下插件的麻烦的教程,我跟着教程搞了一会儿才发现burp自带个暗色主题.于是写下这篇随笔.    <a href="https://www.cnblogs.com/sesmof/p/18146869" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-04-19 22:01
+sesmof
+<span data-post-id="18146869" class="post-view-count">阅读(4)</span> 
+<span data-post-id="18146869" class="post-comment-count">评论(0)</span> 
+<span data-post-id="18146869" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=18146869" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_18105093">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sesmof/p/archive/2024/03/30">2024年3月30日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/18105093">
+    <span>
+        记一次对我的学校的微信小程序的渗透测试(短信轰炸+教师手机号泄露)
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_18105093">
+摘要：        
+0x01 教师手机号泄露 打开智慧校园小程序 点进教师登录后发现,输入我老师名字后会显示尾号 抓包,在response中得到完整的手机号 手机注册那里填入抓到的手机号,便可以发短信验证码(填别的手机号会被前端的验证拦截并显示&#39;该手机号不对,清核对信息&#39;,但验证是前端的[前端就是通过该response    <a href="https://www.cnblogs.com/sesmof/p/18105093" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-03-30 10:07
+sesmof
+<span data-post-id="18105093" class="post-view-count">阅读(29)</span> 
+<span data-post-id="18105093" class="post-comment-count">评论(0)</span> 
+<span data-post-id="18105093" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=18105093" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_18000388">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sesmof/p/archive/2024/02/01">2024年2月1日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/18000388">
+    <span>
+        mozhe靶场: WebShell文件上传漏洞分析溯源(第5题) 题解(使用哥斯拉)
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_18000388">
+摘要：        
+哥斯拉由java编写,可以在linux上使用.个人认为比冰蝎好用,用冰蝎连不上这个靶场,但是哥斯拉可以连的上. github搜哥斯拉就能下载 首先登陆后台,弱口令 admin admin 点击添加文章,尝试上传一句话木马(一句话木马可以点击哥斯拉的生成) webshell.asp &lt;%eval re    <a href="https://www.cnblogs.com/sesmof/p/18000388" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-02-01 21:43
+sesmof
+<span data-post-id="18000388" class="post-view-count">阅读(25)</span> 
+<span data-post-id="18000388" class="post-comment-count">评论(1)</span> 
+<span data-post-id="18000388" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=18000388" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+<div class="day" role="article" aria-describedby="postlist_description_17992374">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sesmof/p/archive/2024/01/28">2024年1月28日
+</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/sesmof/p/17992374">
+    <span>
+        picoCTF login/logon 题解
+    </span>
+    
+
+</a>
+        </div>
+        <div class="postCon">
+
+<div class="c_b_p_desc" id="postlist_description_17992374">
+摘要：        <img src="https://img2024.cnblogs.com/blog/3309916/202401/3309916-20240127232630895-1748848680.png" alt="picoCTF login/logon 题解" class="desc_img" />
+密码信息可能保存在前端,分析js文件:    <a href="https://www.cnblogs.com/sesmof/p/17992374" class="c_b_p_desc_readmore">阅读全文</a>
+</div>
+
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2024-01-28 02:00
+sesmof
+<span data-post-id="17992374" class="post-view-count">阅读(50)</span> 
+<span data-post-id="17992374" class="post-comment-count">评论(0)</span> 
+<span data-post-id="17992374" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=17992374" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+    <h3 class="catListTitle">公告</h3>
+<div id="blog-news">    
+    <div id="sidebar_news_content">
+    </div>
+</div>
+<script>loadBlogNews();</script>
+
+ 
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2024 sesmof
+<br /><span id="poweredby">Powered by .NET 8.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+    <div id="page_end_html">
+        <script src="https://guangzan.gitee.io/awescnb/index.js"></script>
+<script>
+  const opts = {
+    
+    imagebox: {
+    enable: true,
+    },
+    
+    signature: {
+    enable: true,
+    contents: [
+    "<b style='color:#b22222'>A cigarette for you(🚬)</b>",
+    "<b style='color:#ff2400'>Hello World!</b>",
+    ],
+    },
+    
+    musicPlayer: {
+    enable: true,
+    autoplay: false,
+    lrc: {
+        enable: false,        // 启用歌词
+        type: 1,             // 歌词类型  1 -> 字符串 3 -> url
+        color: '#10ac84',    // 颜色
+    },
+    audio: [
+        {
+            name: ' 飘上月球，不死之烟',
+            artist: '上海爱丽丝幻乐团',
+            url:
+                'https://upload.thwiki.cc/b/bc/th08_18.mp3',
+            volume: 0.4,
+            cover:
+                'https://upload.thwiki.cc/thumb/4/46/%E8%97%A4%E5%8E%9F%E5%A6%B9%E7%BA%A2%EF%BC%88%E4%BA%BA%E5%A6%96%E5%90%8D%E9%89%B4%EF%BC%89.jpg/424px-%E8%97%A4%E5%8E%9F%E5%A6%B9%E7%BA%A2%EF%BC%88%E4%BA%BA%E5%A6%96%E5%90%8D%E9%89%B4%EF%BC%89.jpg',
+        },
+    ],
+    },
+    
+    bodyBackground: {
+    enable: true,
+    //value:
+    //    'https://img520.com/LmvIRl.png',
+    opacity: 0.85,
+    repeat: true,
+    },
+
+    click: {
+    enable: false,
+    auto: false,
+    colors: ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'],
+    size: 30,
+    maxCount: 50,
+    },
+
+    live2d: {
+    enable: false,
+    page: 'all',
+    agent: 'pc',
+    model: '小埋',
+    width: 150,
+    height: 200,
+    position: 'left',
+    gap: 'default',
+    },
+
+    catalog: {
+    enable: true,
+    position: 'left',
+    },
+
+    darkMode: {
+    enable: true,
+    autoDark: false,
+    autoLight: false
+    },
+
+    topProgress: {
+    enable: false,
+    page: 'all',
+    agent: 'pc',
+    background: '#FFB3CC',
+    height: '5px',
+    },
+
+    theme: {
+      name: 'geek',
+      avatar: 'https://pic.cnblogs.com/avatar/3309916/20231026001704.png',
+      headerBackground: 'https://images.cnblogs.com/cnblogs_com/blogs/816118/galleries/2375736/o_240128152232_duizhi.jpg'
+    },
+
+  }
+  $.awesCnb(opts)
+</script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8C838EyK0EpKpQQcC9VwxBm2RdwWcyWbhuFw0FALNXvNPQMkNq-eRoGCI6ReZz8eY2pnZhBx281zFkJoNCmTfVw29yjOgII1cuo0HZSr35SjrE8nYkxQNpx0fbGfK3WY3lW_d_XxXjUz6Cqv_TUCTqg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M95P3TTWJZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M95P3TTWJZ');
+</script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>
