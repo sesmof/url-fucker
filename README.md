@@ -12,7 +12,7 @@ pip install requests
 
 pip install beautifulsoup4
 
-
+---------------------------------------------------
 
 python3 url-fucker -u example.com  #启动
 
