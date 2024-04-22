@@ -18,4 +18,6 @@ python3 url-fucker -u example.com  #启动
 
 python3 url-fucker -u example.com -t #以多线程模式启动#2024.4.21 添加了多线程功能
 
+python3 url-fucker -u example.com -t -s #以多线程模式启动并收集子域名#2024.4.22 添加了搜集子域名功能#目前的最佳语法
+
 作者博客园:https://www.cnblogs.com/sesmof
