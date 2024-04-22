@@ -12,6 +12,7 @@ from datetime import datetime
 import re
 from urllib.parse import urlparse
 import os
+from concurrent.futures import ThreadPoolExecutor
 path='downloads'
 astar='[*]'
 logo=TOmiku(r'''
@@ -20,11 +21,12 @@ logo=TOmiku(r'''
 | | |||  \/|| |   _____ |  __\| | |||  /  |   / |  \  |  \/|
 | \_/||    /| |_/\\____\| |   | \_/||  \_ |   \ |  /_ |    /
 \____/\_/\_\\____/      \_/   \____/\____/\_|\_\\____\\_/\_\
-''')+TOgreen('*** v1.0 *********************************')+TObulue('''*** ---by sesmof ***''')
+''')+TOgreen('*** v1.11 *********************************')+TObulue('''*** ---by sesmof ***''')
 #Command line parsing解析命令行 
 parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v0.1'))
 parser.add_argument('-u', type=str, default=None, help='input the url')
 parser.add_argument('-t', action='store_true', help='if you want to use multithreading')
+parser.add_argument('-s', action='store_true', help='find subdomain')
 args=parser.parse_args()
 #---
 #加脑袋
@@ -50,6 +52,20 @@ def traverse_file(path):
 from core import findurl
 #获取网页摘要
 from core import getxxx
+#扫子域名
+from core.findsudomain import find_subdomain
+def find_subdomain2(path):
+    subdomains=[]
+    for file in traverse_file(path):
+        
+        urls_in_file, paths_in_file=findurl.find_urls_and_paths_in_file(file)
+        #print(urls_in_file)
+        # print('===========================')
+        # print(find_subdomain(urls_in_file,args.u))
+        subdomains.append(find_subdomain(urls_in_file,args.u))
+    return subdomains
+#find_subdomain2(path)#test
+
 import threading
 #多线程函数
 def worker(file, url, lock):
@@ -70,7 +86,8 @@ def worker(file, url, lock):
 def downpage():
     if args.u==None:
         print(logo)
-        print('\n'+TOmiku('[*]')+'-h for help\n'+TOmiku('[*]')+'-u input url\n'+TOmiku('[*]')+'-t use multithreading\n')
+        print('\n'+TOmiku('[*]')+'-h for help\n'+TOmiku('[*]')+'-u input url\n'+TOmiku('[*]')+'-t use multithreading\n'
+              +TOmiku('[*]')+'-s to find subdomains\n')
         exit()
     else:
         print(logo)
@@ -110,10 +127,35 @@ def thread_main(path):
             threads.append(t)
         for t in threads:
             t.join()
+ifsubdomain=0
+if args.s ==True:
+    ifsubdomain=1
+    # subdomain_worker=threading.Thread(target=find_subdomain2,args=(path,))
+    # subdomain_worker.start()
+    #find_subdomain2(path)
+    future = ThreadPoolExecutor().submit(find_subdomain2, path)
+    
 if args.t ==False:
     normal_main(path)
 elif args.t==True:
     thread_main(path)
-whattime=time.time()-time1
+if ifsubdomain==1:
+    whattime=time.time()-time1
+    print('\n'+TOmiku('[*]urls finding is DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s'))
+    print(TOmiku("[*]subdomain's finding is WAITING to work out"))
 
-print('\n'+TOmiku('[*]DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s')+'\n')
+    subdomains = future.result()
+    if len(subdomains)!=0:
+        print(TOmiku('subdomains:')+'\n')
+        for i in subdomains:
+            if len(i)!=0:
+                for j in i:
+                    print(j)
+    else:
+        print(TOyellow('Sorry no subdomains found')+'\n')
+
+
+    #print(subdomains)
+
+whattime=time.time()-time1
+print('\n'+TOmiku('[*]ALL DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s')+'\n')
