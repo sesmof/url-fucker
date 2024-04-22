@@ -23,7 +23,7 @@ logo=TOmiku(r'''
 \____/\_/\_\\____/      \_/   \____/\____/\_|\_\\____\\_/\_\
 ''')+TOgreen('*** v1.11 *********************************')+TObulue('''*** ---by sesmof ***''')
 #Command line parsing解析命令行 
-parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v0.1'))
+parser=argparse.ArgumentParser(description=TOmiku('URL-fucker v1.11'))
 parser.add_argument('-u', type=str, default=None, help='input the url')
 parser.add_argument('-t', action='store_true', help='if you want to use multithreading')
 parser.add_argument('-s', action='store_true', help='find subdomain')
