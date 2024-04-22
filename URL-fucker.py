@@ -37,6 +37,14 @@ def add_http_header(url):
 #当前时间
 def now():
     return astar+'|@'+datetime.now().strftime("%H:%M:%S")+'|'
+#得到顶级域名
+def get_top_level_domain(url):
+    result = urlparse(url)
+    domain_parts = result.netloc.split('.')
+    if len(domain_parts) < 2:
+        return result.netloc
+    else:
+        return domain_parts[-2] + '.' + domain_parts[-1]
 #遍历文件夹下的所有文件
 def traverse_file(path):
     files = os.listdir(path)
@@ -133,7 +141,9 @@ if args.s ==True:
     # subdomain_worker=threading.Thread(target=find_subdomain2,args=(path,))
     # subdomain_worker.start()
     #find_subdomain2(path)
-    future = ThreadPoolExecutor().submit(find_subdomain2, path)
+    #
+    #future = ThreadPoolExecutor().submit(find_subdomain2, path)
+    #如果加上这行寻找子域名操作会和别的操作一起执行
     
 if args.t ==False:
     normal_main(path)
@@ -141,7 +151,8 @@ elif args.t==True:
     thread_main(path)
 if ifsubdomain==1:
     whattime=time.time()-time1
-    print('\n'+TOmiku('[*]urls finding is DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s'))
+    print('\n'+TOmiku('[*]urls finding is DOWN,It took: ')+TObling(f'{whattime}')+TOmiku('s'))
+    future = ThreadPoolExecutor().submit(find_subdomain2, path)
     print(TOmiku("[*]subdomain's finding is WAITING to work out"))
 
     subdomains = future.result()
@@ -150,7 +161,8 @@ if ifsubdomain==1:
         for i in subdomains:
             if len(i)!=0:
                 for j in i:
-                    print(j)
+                    if get_top_level_domain(args.u)==get_top_level_domain(j):
+                        print(j)
     else:
         print(TOyellow('Sorry no subdomains found')+'\n')
 
@@ -158,4 +170,4 @@ if ifsubdomain==1:
     #print(subdomains)
 
 whattime=time.time()-time1
-print('\n'+TOmiku('[*]ALL DOWN,It took: ')+TOgreen(f'{whattime}')+TOmiku('s')+'\n')
+print('\n'+TOmiku('[*]-ALL DOWN,It took: ')+TObling(f'{whattime}')+TOmiku('s')+'\n')
